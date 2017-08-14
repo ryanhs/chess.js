@@ -487,7 +487,7 @@ var Chess = function(fen) {
 	if (typeof generateMovesCaches[cacheKey] != 'undefined') {
 		return generateMovesCaches[cacheKey];
 	}
-	  
+
     function add_move(board, moves, from, to, flags) {
       /* if pawn promotion */
       if (board[from].type === PAWN &&
@@ -1178,6 +1178,10 @@ var Chess = function(fen) {
 
     reset: function() {
       return reset();
+    },
+
+    swap_color: function() {
+      turn = swap_color(turn);
     },
 
     moves: function(options) {
